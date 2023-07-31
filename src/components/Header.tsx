@@ -1,6 +1,5 @@
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { EthosConnectStatus, SignInButton, ethos } from 'ethos-connect';
 import { FC, useState } from 'react';
 
 const navigation = [
@@ -10,7 +9,6 @@ const navigation = [
 
 const Header: FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const { status } = ethos.useWallet();
 
     return (
         <header className="absolute inset-x-0 top-0 z-50">
@@ -51,7 +49,7 @@ const Header: FC = () => {
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    {status === EthosConnectStatus.Connected ? <ethos.components.AddressWidget /> : <SignInButton />}
+                    <a href="#">Sign in</a>
                 </div>
             </nav>
             {/* BEGIN MOBILE MENU */}
@@ -90,7 +88,7 @@ const Header: FC = () => {
                                 ))}
                             </div>
                             <div className="py-6">
-                                <SignInButton />
+                                <a href="#">Sign in</a>
                             </div>
                         </div>
                     </div>
