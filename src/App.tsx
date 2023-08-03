@@ -8,14 +8,7 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <EthosConnectProvider
-      ethosConfiguration={{
-        chain: Chain.SUI_TESTNET
-      }}
-      dappName='Ethos Squad'
-      dappIcon={<SquadDappIcon />}
-      connectMessage="Sign in to join the Squad!"
-    >
+    <>
       <ToastContainer position='bottom-center' />
       <Router>
         <div>
@@ -25,7 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
           </Routes>      </div>
       </Router>
-    </EthosConnectProvider>
+    </>
   );
 }
 
